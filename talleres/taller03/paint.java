@@ -6,32 +6,32 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-import java.util.*;
+
 public class paint
 {
     //el ref entra como un numero cualquiera que no se vaya a utilizar
-    public static void paint(int[][] bloque, int x, int y, int color, int ref )
+    public static void paint(int[][] bloque, int x, int y, int color)
     {
-        ref = bloque[x][y];
+        int ref = bloque[x][y];
         bloque[x][y] = color;
         if(color == ref)
         {   
         }
         if(x > 0 && bloque[x-1][y] == ref)
         {
-            paint(bloque, x-1, y, color, ref);
+            paint(bloque, x-1, y, color);
         }
         if(y > 0 && bloque[x][y-1] == ref)
         {
-            paint(bloque, x, y-1, color, ref);
+            paint(bloque, x, y-1, color);
         }
         if(x < bloque.length-1 && bloque[x+1][y] == ref)
         {
-            paint(bloque, x+1, y, color, ref);
+            paint(bloque, x+1, y, color);
         }
         if(y < bloque[0].length-1 && bloque[x][y+1] == ref)
         {
-            paint(bloque, x, y+1, color, ref);
+            paint(bloque, x, y+1, color);
         }
         
     }
