@@ -1,12 +1,5 @@
 
 
-/**
- * Write a description of class hanoi here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-
 public class paint
 {
     //el ref entra como un numero cualquiera que no se vaya a utilizar
