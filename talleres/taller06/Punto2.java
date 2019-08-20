@@ -1,12 +1,10 @@
 
-package datos;
+
+//tiene una complejidad de O(n) pues debe recorrer n los elementos por cada enesimo elemento ingresado.
 import java.util.Scanner;
 import java.util.ArrayList;
-/**
- *
- * @author dcalleg
- */
-public class Datos {
+
+ class Main {
     public static ArrayList<Integer> aux(ArrayList<Integer> arr, int n)
     {
         ArrayList<Integer> arr2 = new ArrayList<Integer>();
@@ -17,7 +15,7 @@ public class Datos {
         }
         return arr2;
     }
-    public static void agregar(ArrayList<Integer> arr, int[] n)
+    public static ArrayList<Integer> agregar(ArrayList<Integer> arr)
     {
         Scanner inp = new Scanner(System.in);
         int a = inp.nextInt();
@@ -26,5 +24,14 @@ public class Datos {
             arr = aux(arr,a);
             a = inp.nextInt();
         }
+        return arr;
+    }
+
+    public static void main(String[] args)//test
+    {
+      ArrayList<Integer> i = new ArrayList<Integer>();
+      i = agregar(i);
+      System.out.println(i);
+      
     }    
 }
