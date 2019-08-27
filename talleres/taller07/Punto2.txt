@@ -1,0 +1,17 @@
+public int Buscar(char a)
+    {
+      Nodo cur = this.elPrimerElementoDeLaLista;
+      for(int i = 0; i < this.size;i++)
+      {
+        if(cur.dato == a)
+        {
+          return i;
+        }
+        else
+        {
+          cur = cur.elSiguienteDespuesDeMi;
+        }
+      }
+      System.out.print("no esta");
+      return 0;
+    }

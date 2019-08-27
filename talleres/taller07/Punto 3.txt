@@ -1,0 +1,16 @@
+public int auxMax(Nodo a)
+    {
+      if(a.elSiguienteDespuesDeMi != null)
+      {
+          return Math.max(a.dato, auxMax(a.elSiguienteDespuesDeMi));
+      }
+      else
+      {
+        return a.dato;
+      }
+    }
+
+    public int Max()
+    {
+      return(auxMax(this.elPrimerElementoDeLaLista));
+    }

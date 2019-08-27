@@ -1,0 +1,12 @@
+public boolean compare(Nodo nodo1,Nodo nodo2)
+    {
+      if((nodo1.elSiguienteDespuesDeMi == null && nodo2.elSiguienteDespuesDeMi!= null) || (nodo1.elSiguienteDespuesDeMi != null && nodo2.elSiguienteDespuesDeMi== null))
+      {
+        return false;
+      }
+      if(nodo1.elSiguienteDespuesDeMi == null && nodo2.elSiguienteDespuesDeMi== null)
+      {
+        return true;
+      }
+      return(nodo1.dato==nodo2.dato && compare(nodo1.elSiguienteDespuesDeMi, nodo2.elSiguienteDespuesDeMi));
+    }
