@@ -1,0 +1,21 @@
+public boolean haveThree(int[] nums) {
+  int tri = 0;
+  boolean rep = false;
+  for(int i: nums)
+  {
+    if(i == 3)
+    {
+      if(rep)
+      {
+        return false;
+      }
+      tri+=1;
+      rep = true;
+    }
+    else
+    {
+      rep = false;
+    }
+  }
+  return tri == 3;
+}
