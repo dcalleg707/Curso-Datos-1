@@ -21,9 +21,10 @@ class LinkedList:
         n = self.start_node
         while n.ref is not None:
             n = n.ref
-        n.ref = new_node;
+        n.ref = new_node
 
-# código hecho por nosotros
+
+# cÃ³digo hecho por nosotros
 
     def insert_node_at_end(self, nodo):
         if self.start_node is None:
@@ -48,6 +49,7 @@ def printer(lista):
         current = current.ref
     print(sol)
 
+
 def teclado(frase):
     aux = LinkedList()
     sol = LinkedList()
@@ -69,6 +71,7 @@ def teclado(frase):
             aux = LinkedList()
             sol.insert_at_end(frase[i])
     aux.ConditinonedUnion(sol)
-    printer(sol)
+    return(sol)
 
-teclado(input())
+
+printer(teclado(input()))
