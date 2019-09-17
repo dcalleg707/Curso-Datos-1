@@ -3,11 +3,10 @@ public class Hash {
     
     public static void punto2()
     {
-        HashMap<String, String> negocio = new HashMap<String, String>();
         negocio.put("Google", "Estados Unidos");
         negocio.put("La locura", "Colombia");
         negocio.put("Nokia", "Finlandia");
-        negocio.put("Sony", "JapÛn");
+        negocio.put("Sony", "Jap√≥n");
     }
     
     public static String punto3(String nombre)
@@ -25,7 +24,7 @@ public class Hash {
             return negocio.get(nombre);
         }
         else{
-            return "No est·";
+            return "No est√°";
         }
     }
     
@@ -44,7 +43,7 @@ public class Hash {
             return negocio.get(nombre);
         }
         else{
-            return "No est·";
+            return "No est√°";
         }
     }
     
