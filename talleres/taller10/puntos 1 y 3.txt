@@ -1,0 +1,94 @@
+class nodo
+{
+  int valor; 
+  nodo padre;
+  nodo left;
+  nodo right;
+  
+  public nodo(int valor)
+  {
+      this.valor = valor;
+  }
+  public nodo()
+  {
+      left = null;
+      right= null;
+  }
+}
+
+class arbol{
+
+nodo raiz;
+
+
+public arbol(nodo raiz){
+  this.raiz = raiz;
+}
+
+public arbol(int valor){
+  this.raiz = new nodo(valor);
+}
+
+//complejidad de logaritmo en base 2 de N siendo N el numero de hojas 
+public nodo buscar(int ind)
+{
+    nodo cur = this.raiz;
+    while(cur.valor != ind)
+    {
+        cur = ind > cur.valor ?cur.right:cur.left;
+    }
+    return cur;
+}
+
+public void addNodo(nodo nodo, nodo raiz){
+
+
+    if(raiz == null){
+
+      raiz = nodo;
+
+    }else{
+
+      if(nodo.valor<= raiz.valor){
+
+          if(nodo.left==null){
+            raiz.left = nodo;
+          }else{
+            addNodo(nodo,raiz.left);
+          }
+
+      }else{
+
+        if(raiz.right == null){
+          raiz.right =(nodo);
+        }else{
+          addNodo(nodo,raiz.right);
+        }
+
+      }
+    }
+  }
+
+//complejidad de logaritmo en base 2 de N siendo N el numero de hojas 
+public int borrar(int ind)
+{
+    nodo cur = this.raiz;
+    boolean side = false;
+    while(cur.valor != ind)
+    {
+        side = ind > cur.valor;
+        cur = ind > cur.valor ?cur.right:cur.left;
+    }
+    if(cur.valor != ind) return 0;
+    if(side)
+    {
+        cur.padre.right = cur.left != null? cur.left:cur.right;
+    }
+    else
+    {
+        cur.padre.left = cur.left != null? cur.left:cur.right;
+    }
+    return 0;
+}
+
+}
