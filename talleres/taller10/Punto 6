@@ -1,0 +1,79 @@
+
+public class again
+{
+    public static void main(String[] args)
+    {
+        arbol base = new arbol(20);
+        arbol.add(new nodo(10), base.head);
+        arbol.add(new nodo(30), base.head);
+        arbol.add(new nodo(45), base.head);
+        arbol.add(new nodo(4), base.head);
+        arbol.add(new nodo(6), base.head);
+        arbol.add(new nodo(15), base.head);
+        base.tstring(base.head);
+        
+    }
+}
+class arbol
+{
+    nodo head;
+    public arbol(int n)
+    {
+        head = new nodo(n);
+    }
+    public static void add(nodo inp, nodo raiz)
+    {
+        if(raiz == null)
+        {
+            raiz = inp;
+        }
+        if(inp.data < raiz.data)
+        {
+            if(raiz.left != null)
+            {
+                add(inp, raiz.left);
+            }
+            else
+            {
+                raiz.left = inp;
+            }
+        }
+        else
+        {
+            if(raiz.right != null)
+            {
+                add(inp, raiz.right);                
+            }
+            else
+            {
+                raiz.right = inp;
+            }
+        }
+    }
+    public void tstring(nodo inicio)
+        {
+            if(inicio.left != null)
+            {
+                System.out.println(inicio.data + "->" + inicio.left.data);
+                tstring(inicio.left);
+            }
+            if(inicio.right != null)
+            {
+                System.out.println(inicio.data + "->" + inicio.right.data);
+                tstring(inicio.right);
+            }
+        }
+}
+class nodo
+{
+    int data;
+    nodo left;
+    nodo right;
+    
+    public nodo(int valor)
+    {
+        data = valor;
+        left = null;
+        right = null;
+    }
+}
