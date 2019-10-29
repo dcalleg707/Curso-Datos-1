@@ -3,14 +3,24 @@
 
 import java.util.*;
 import java.io.*;
+
+/**
+ * The type Reader.
+ */
 public class reader
 {
-    public static ListaDatos obtenerDatos()
+    /**
+     * Obatains the list of Datos from a text file
+     *
+     * @param direccion the direction of the File
+     * @return A list with the Datos.
+     */
+    public static ListaDatos obtenerDatos(String direccion)
     {
         try
         {
-            Scanner lector = new Scanner(new File("src\\data_train.csv"));
-            System.out.println(lector.nextLine());
+            Scanner lector = new Scanner(new File(direccion));
+            String x =(lector.nextLine());
             ListaDatos marco = new ListaDatos();
             while(lector.hasNextLine())
             {
